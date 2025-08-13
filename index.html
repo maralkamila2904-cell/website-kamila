@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamila Maral</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="floating-shapes"></div>
+        <div class="hero-content">
+            <h1 class="glow">Kamila Maral</h1>
+            <p class="tagline" id="typing"></p>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="about fade-in">
+        <h2>About Me</h2>
+        <p>I’m a political science nerd with a knack for turning big ideas into tangible results. From research to creative projects, I thrive at the intersection of strategy, storytelling, and action.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects fade-in">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>📜 Research</h3>
+            <p>The impact of colonialism on human rights interpretation.</p>
+        </div>
+        <div class="project-card">
+            <h3>🤝 Events</h3>
+            <p>Organizing cross-campus pre-law networking initiatives.</p>
+        </div>
+        <div class="project-card">
+            <h3>💃 Leadership</h3>
+            <p>PR Executive for campus dance association.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <footer class="fade-in">
+        <div class="socials">
+            <a href="#"><img src="icons/github.svg" alt="GitHub"></a>
+            <a href="#"><img src="icons/linkedin.svg" alt="LinkedIn"></a>
+            <a href="#"><img src="icons/email.svg" alt="Email"></a>
+        </div>
+        <p>© 2025 Kamila Maral</p>
+    </footer>
+
+    <!-- JS for typing & scroll animations -->
+    <script>
+        // Typing effect
+        const text = "✨ Making ideas happen ✦ Political mind • Creative soul ✨";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 60);
+            }
+        }
+        typeWriter();
+
+        // Scroll fade-in animation
+        const faders = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        faders.forEach(fade => observer.observe(fade));
+    </script>
+</body>
+</html>
